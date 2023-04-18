@@ -31,7 +31,7 @@ items:
               image: quay.io/redhattraining/long-load:v1
               resources:
                 requests:
-                  memory: 20G
+                  memory: 20Gi
               ports:
                 - containerPort: 3000
               readinessProbe:
