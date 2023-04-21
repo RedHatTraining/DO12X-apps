@@ -98,3 +98,5 @@ items:
       to:
         kind: Service
         name: long-load
+      tls:
+        termination: edge
