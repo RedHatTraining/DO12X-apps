@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: loop-log
+  name: loop-log
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loop-log
+  template:
+    metadata:
+      labels:
+        app: loop-log
+    spec:
+      containers:
+        - name: loop-log
+          image: registry.redhat.io/ubi9:9.1
+          command:
+            - /bin/bash
+            - -c
+            - "while :; do echo -n Hello: ; date; sleep 15; done"
+          resources:
+            limits:
+              memory: 512Mi
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            allowPrivilegeEscalation: false
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
