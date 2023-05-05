@@ -10,7 +10,7 @@ items:
         app: mariadb
       name: mariadb
     spec:
-      storageClassName: io2-32000
+      storageClassName: io1-32000
       accessModes:
         - ReadWriteOnce
       resources:
