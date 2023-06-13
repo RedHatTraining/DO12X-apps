@@ -44,15 +44,6 @@ items:
                 httpGet:
                   path: /health
                   port: 3000
-              securityContext:
-                capabilities:
-                  drop:
-                    - ALL
-                allowPrivilegeEscalation: false
-          securityContext:
-            runAsNonRoot: true
-            seccompProfile:
-              type: RuntimeDefault
   - apiVersion: v1
     kind: Service
     metadata:
