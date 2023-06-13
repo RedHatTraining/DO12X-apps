@@ -1,0 +1,57 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  labels:
+    `machine.openshift.io/cluster-api-cluster:` `<change_me>`
+    machine.openshift.io/cluster-api-machine-role: worker
+    machine.openshift.io/cluster-api-machine-type: worker
+  name: do121-cluster-memory-worker-1
+  namespace: openshift-machine-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      `machine.openshift.io/cluster-api-cluster:` `<change_me>`
+      `machine.openshift.io/cluster-api-machineset: `<change_me>`
+  template:
+    metadata:
+      labels:
+        `machine.openshift.io/cluster-api-cluster:` `<change_me>`
+        machine.openshift.io/cluster-api-machine-role: worker
+        machine.openshift.io/cluster-api-machine-type: worker
+        `machine.openshift.io/cluster-api-machineset:` `<change_me>`
+    spec:
+      lifecycleHooks: {}
+      metadata: {}
+      providerSpec:
+        value:
+          apiVersion: machine.openshift.io/v1beta1
+          credentialsSecret:
+            name: azure-cloud-credentials
+            namespace: openshift-machine-api
+          image:
+            offer: aro4
+            publisher: azureopenshift
+            resourceID: ''
+            sku: aro_410
+            version: 410.84.20220125
+          kind: AzureMachineProviderSpec
+          location: eastus
+          metadata:
+            creationTimestamp: null
+          networkResourceGroup: aro-rg
+          osDisk:
+            diskSettings: {}
+            diskSizeGB: 128
+            managedDisk:
+              storageAccountType: Premium_LRS
+            osType: Linux
+          publicIP: false
+          publicLoadBalancer: `<change_me>`
+          resourceGroup: `<change_me>`
+          subnet: worker-subnet
+          userDataSecret:
+            name: worker-user-data
+          `vmSize:` `<change_me>` #Standard_D8s_v3
+          vnet: `<change_me>`
+          zone: '1'
