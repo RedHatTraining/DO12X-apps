@@ -5,7 +5,7 @@ metadata:
 provisioner: kubernetes.io/azure-disk
 parameters:
   kind: managed
-  storageaccounttype: StandardSSD_LRS
+  storageaccounttype: Premium_LRS
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
