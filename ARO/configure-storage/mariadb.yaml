@@ -15,7 +15,7 @@ items:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 4Gi
+          storage: 512Gi
   - apiVersion: v1
     kind: Secret
     metadata:
