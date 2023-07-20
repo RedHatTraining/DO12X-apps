@@ -2,10 +2,10 @@
 apiVersion: storage.k8s.io/v1
 metadata:
   name: mariadb-sc
-provisioner: kubernetes.io/azure-disk
+provisioner: disk.csi.azure.com
 parameters:
   kind: managed
-  storageaccounttype: Premium_LRS
+  storageaccounttype: StandardSSD_LRS
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
