@@ -10,7 +10,7 @@ items:
         app: mariadb
       name: mariadb
     spec:
-      storageClassName: mariadb-sc
+      storageClassName: low-cost-sc
       accessModes:
         - ReadWriteOnce
       resources:
