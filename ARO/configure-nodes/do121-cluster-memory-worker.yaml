@@ -12,14 +12,14 @@ spec:
   selector:
     matchLabels:
       `machine.openshift.io/cluster-api-cluster:` `<change_me>`
-      `machine.openshift.io/cluster-api-machineset: `<change_me>`
+      `machine.openshift.io/cluster-api-machineset: `do121-cluster-memory-worker-1`
   template:
     metadata:
       labels:
         `machine.openshift.io/cluster-api-cluster:` `<change_me>`
         machine.openshift.io/cluster-api-machine-role: worker
         machine.openshift.io/cluster-api-machine-type: worker
-        `machine.openshift.io/cluster-api-machineset:` `<change_me>`
+        `machine.openshift.io/cluster-api-machineset:` `do121-cluster-memory-worker-1`
     spec:
       lifecycleHooks: {}
       metadata: {}
