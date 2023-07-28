@@ -1,7 +1,7 @@
 apiVersion: autoscaling.openshift.io/v1beta1
 kind: MachineAutoscaler
 metadata:
-  name: do121-cluster-memory-worker
+  name: do121-cluster-memory-worker-1
   namespace: openshift-machine-api
 spec:
   maxReplicas: 4
@@ -9,4 +9,4 @@ spec:
   scaleTargetRef:
     apiVersion: machine.openshift.io/v1beta1
     kind: MachineSet
-    name: do121-cluster-memory-worker
+    name: do121-cluster-memory-worker-1
